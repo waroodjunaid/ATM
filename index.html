@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ATM App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="atm-container">
+    <h1>ATM Machine</h1>
+    <div id="step1">
+      <p>Your current balance is: ₹<span id="currentBalance">10000</span></p>
+      <p>Enter your PIN:</p>
+      <input type="password" id="pinInput" maxlength="4" placeholder="Enter 4-digit PIN">
+      <button onclick="validatePin()">Submit</button>
+    </div>
+
+    <div id="step2" style="display: none;">
+      <p>Select the amount you want to withdraw:</p>
+      <select id="amountSelect">
+        <option value="500">500</option>
+        <option value="1000">1000</option>
+        <option value="2000">2000</option>
+        <option value="5000">5000</option>
+      </select>
+      <button onclick="withdrawAmount()">Withdraw</button>
+    </div>
+
+    <div id="result" style="display: none;">
+      <p id="resultMessage"></p>
+      <p>Your remaining balance is: ₹<span id="remainingBalance"></span></p>
+      <button onclick="resetATM()">Start Over</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
